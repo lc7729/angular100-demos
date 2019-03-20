@@ -3,10 +3,9 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-root',
   template: `
-          <h1>Welcome to {{title}}</h1>
-          <p>The year is {{theYear}}</p>
+          <h1>Welcome to {{title}} in {{theYear}}</h1>
           <p>Next year is {{1 + theYear}}</p>
-          <div [hidden]="isTrue">Is this hidden?</div>
+
           `,
   styleUrls: ['./app.component.css']
 })
