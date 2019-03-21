@@ -5,12 +5,8 @@ import { Component, OnInit } from '@angular/core';
   template: `
   <div class="container">
   <div class="card-deck">
-    <app-person [name]="peopleArray[0]"
-    (personClicked)="parentFunctionHandler($event)"></app-person>
-    <app-person [name]="peopleArray[1]"
-    (personClicked)="parentFunctionHandler($event)"></app-person>
-    <app-person [name]="peopleArray[2]"
-    (personClicked)="parentFunctionHandler($event)"></app-person>
+    <app-person *ngFor="let person of peopleArray" [name]="person">
+    </app-person>
   </div>
   </div>
     `
