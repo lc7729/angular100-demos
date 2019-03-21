@@ -1,5 +1,5 @@
-import { Component, OnInit } from "@angular/core";
-import { Product } from "./shared/product";
+import { Component, OnInit } from '@angular/core';
+import { Product } from './shared/product';
 
 @Component({
   selector: 'app-product-list',
@@ -18,8 +18,8 @@ export class ProductListComponent implements OnInit {
   ngOnInit() {
     this.products = [
       { id: 1, description: 'cups', quantity: 30 },
-      { id: 2, description: "spoons", quantity: 10000 },
-      { id: 3, description: "knives", quantity: 0 }
+      { id: 2, description: 'spoons', quantity: 10000 },
+      { id: 3, description: 'knives', quantity: 0 }
     ];
   }
 }
