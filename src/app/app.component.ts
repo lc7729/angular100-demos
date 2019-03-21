@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
 
 @Component({
-  selector: 'app-root',
+  selector: "app-root",
   template: `
     <p>{{ numbers }}</p>
   `
@@ -15,7 +15,7 @@ export class AppComponent implements OnInit {
     const timerId = setInterval(() => {
       this.numbers = [...this.numbers, Math.floor(Math.random() * 10)];
 
-    console.log(this.numbers);
+      console.log(this.numbers);
     }, 1000);
 
     setTimeout(() => {
@@ -23,4 +23,3 @@ export class AppComponent implements OnInit {
     }, 4000);
   }
 }
-
