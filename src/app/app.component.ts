@@ -4,19 +4,29 @@ import { Person } from "./shared/models/person.model";
 @Component({
   selector: "app-root",
   template: `
-    <p [hidden]="isHidden">Is it hidden?</p>
-    <img [src]="'assets/favicon.png'" />
+    <p>Name: {{ person.name }}</p>
+    <p>Email: {{ person.email }}</p>
+    <p>Age: {{ person.age }}</p>
   `
 })
 export class AppComponent implements OnInit {
-  isHidden: boolean;
   person: Person;
 
   ngOnInit(): void {
-    this.isHidden = false;
+    this.person = {
+      name: "Jane",
+      email: "alias@nbc.com",
+      age: 34
+    };
+  }
 
-    setInterval(() => {
-      this.isHidden = !this.isHidden;
-    }, 1000);
+  someExample() {
+    const notSure: any = 4;
+    notSure.ifItExists(); // okay, ifItExists might exist at runtime
+    notSure.toFixed(); // okay, toFixed exists (but the compiler doesn't check)
+
+    const prettySure: Object = 4;
+    prettySure.toFixed();
+    // Error: Property 'toFixed' doesn't exist on type 'Object'.
   }
 }
