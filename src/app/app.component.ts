@@ -4,7 +4,6 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-root',
   template: `
           <p [hidden]="isHidden">Is it hidden?</p>
-          <img [src]="'assets/favicon.png'" />
           `,
   styleUrls: ['./app.component.css']
 })
