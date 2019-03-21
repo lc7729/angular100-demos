@@ -1,4 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+
 
 @Component({
   selector: 'app-person',
@@ -16,8 +17,11 @@ export class PersonComponent implements OnInit {
   @Input()
   name: string;
 
+  @Output()
+  personClicked: EventEmitter<string> = new EventEmitter<string>();
+
   clickPerson() {
-    alert('you clicked ' + this.name);
+    this.personClicked.emit(this.name);
   }
 
   constructor() {}

@@ -5,9 +5,12 @@ import { Component, OnInit } from '@angular/core';
   template: `
   <div class="container">
   <div class="card-deck">
-    <app-person [name]="peopleArray[0]"></app-person>
-    <app-person [name]="peopleArray[1]"></app-person>
-    <app-person [name]="peopleArray[2]"></app-person>
+    <app-person [name]="peopleArray[0]"
+    (personClicked)="parentFunctionHandler($event)"></app-person>
+    <app-person [name]="peopleArray[1]"
+    (personClicked)="parentFunctionHandler($event)"></app-person>
+    <app-person [name]="peopleArray[2]"
+    (personClicked)="parentFunctionHandler($event)"></app-person>
   </div>
   </div>
     `
@@ -15,10 +18,12 @@ import { Component, OnInit } from '@angular/core';
 export class PeopleListComponent implements OnInit {
   peopleArray: any[];
 
-  constructor() { }
-
   ngOnInit() {
     this.peopleArray = ['April', 'May', 'June'];
+  }
+
+  parentFunctionHandler(name) {
+      alert(`You sent ${name} up to list from child`);
   }
 
 }
