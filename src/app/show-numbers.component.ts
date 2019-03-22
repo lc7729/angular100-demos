@@ -3,11 +3,8 @@ import { Component, OnInit } from "@angular/core";
 @Component({
   selector: "app-show-numbers",
   template: `
-    <p>
-      {{ numbers }}
-    </p>
-  `,
-  styles: []
+    <p>{{ numbers }}</p>
+  `
 })
 export class ShowNumbersComponent implements OnInit {
   numbers: number[];
@@ -16,7 +13,11 @@ export class ShowNumbersComponent implements OnInit {
     this.numbers = [1, 2, 3];
 
     const timerId = setInterval(() => {
-      this.numbers = [...this.numbers, Math.floor(Math.random() * 10)];
+      //UPDATES SCREEN
+      // this.numbers = [...this.numbers, Math.floor(Math.random() * 10)];
+
+      //DOES NOT UPDATE SCREEN
+      this.numbers.push(Math.floor(Math.random() * 10));
 
       console.log(this.numbers);
     }, 1000);
