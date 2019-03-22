@@ -3,12 +3,13 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --port 3333 -o",
+    "start": "run-p json-server startng",
+    "startng": "ng serve --port 3333 -o",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "json-server": "json-server --watch people.json"
+    "json-server": "json-server --watch people.json --port 4444"
   },
   "private": true,
   "dependencies": {
@@ -23,6 +24,7 @@
     "bootstrap": "^4.3.1",
     "core-js": "^2.5.4",
     "json-server": "^0.14.2",
+    "npm-run-all": "^4.1.5",
     "rxjs": "~6.3.3",
     "tslib": "^1.9.0",
     "zone.js": "~0.8.26"
