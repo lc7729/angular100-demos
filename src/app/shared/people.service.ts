@@ -1,5 +1,7 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
+import { Observable } from "rxjs";
+import { Person } from "./models/person.model";
 
 @Injectable({
   providedIn: "root"
@@ -9,7 +11,7 @@ export class PeopleService {
 
   constructor(private http: HttpClient) {}
 
-  getPeople() {
-    this.http.get(this.url).subscribe(res => console.log(res));
+  getPeople(): Observable<Person[]> {
+    return this.http.get<Person[]>(this.url);
   }
 }
