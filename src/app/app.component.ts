@@ -1,10 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Person } from './shared/models/person.model';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  template: `
+    <app-product-list></app-product-list>
+  `
 })
-export class AppComponent {
-  title = 'angular100-demos';
-}
+export class AppComponent {}
