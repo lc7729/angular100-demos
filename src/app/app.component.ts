@@ -6,11 +6,8 @@ import { Observable } from "rxjs";
 @Component({
   selector: "app-root",
   template: `
-    <ul>
-      <li *ngFor="let person of people">
-        {{ person.first_name }}
-      </li>
-    </ul>
+    <app-navbar></app-navbar>
+    <router-outlet></router-outlet>
   `
 })
 export class AppComponent implements OnInit {
