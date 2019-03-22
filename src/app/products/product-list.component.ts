@@ -6,11 +6,14 @@ import { Product } from './shared/product';
   template: `
     <h1>Products</h1>
     <ul *ngIf="products">
-      <li *ngFor="let product of products; let i = index">
-        {{ i + 1 }}) {{ product.description }} {{ product.quantity }}
+      <li *ngFor="let product of products; let i = index" [ngSwitch]="product.quantity">
+        Qty: {{ product.quantity }} - {{ product.description }}
+
+        <span *ngSwitchCase="'0'" class="text-danger">Out of stock</span>
+        <span *ngSwitchCase="'1'" class="text-warning">Last one!</span>
+        <span *ngSwitchDefault class="text-primary">In stock</span>
       </li>
     </ul>
-    <div *ngIf="!products">No products yet - wait 5 seconds</div>
   `
 })
 export class ProductListComponent implements OnInit {
@@ -18,12 +21,10 @@ export class ProductListComponent implements OnInit {
   productId = 3;
 
   ngOnInit() {
-    setTimeout(() => {
-      this.products = [
-        { id: 1, description: 'cups', quantity: 30 },
-        { id: 2, description: 'spoons', quantity: 10000 },
-        { id: 3, description: 'knives', quantity: 0 }
-      ];
-    }, 5000);
+    this.products = [
+      { id: 1, description: 'cups', quantity: 1 },
+      { id: 2, description: 'spoons', quantity: 10000 },
+      { id: 3, description: 'knives', quantity: 0 }
+    ];
   }
 }
