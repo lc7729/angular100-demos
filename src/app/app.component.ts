@@ -7,18 +7,23 @@ import { Observable } from "rxjs";
   selector: "app-root",
   template: `
     <ul>
-      <li *ngFor="let person of (people$ | async)">
+      <li *ngFor="let person of people">
         {{ person.first_name }}
       </li>
     </ul>
   `
 })
 export class AppComponent implements OnInit {
-  people$: Observable<Person[]>;
+  people: Person[];
 
   constructor(private peopleService: PeopleService) {}
 
   ngOnInit(): void {
-    this.people$ = this.peopleService.getPeople();
+    this.peopleService.getPeople().subscribe(
+      (data: Person[]) => {
+        this.people = data;
+      },
+      error => console.log("error occured", error)
+    );
   }
 }
