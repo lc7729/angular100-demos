@@ -1,14 +1,16 @@
 import { Component, OnInit } from "@angular/core";
+import { PeopleService } from "./shared/people.service";
 
 @Component({
   selector: "app-root",
   template: `
-    <button (click)="showNumbers = !showNumbers">
-      Toggle Show *ngIf for show numbers
-    </button>
-    <app-show-numbers *ngIf="showNumbers"></app-show-numbers>
+    Check logs
   `
 })
-export class AppComponent {
-  showNumbers = true;
+export class AppComponent implements OnInit {
+  constructor(private peopleService: PeopleService) {}
+
+  ngOnInit(): void {
+    this.peopleService.getPeople();
+  }
 }
