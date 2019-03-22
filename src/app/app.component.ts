@@ -7,7 +7,9 @@ import { Observable } from "rxjs";
   selector: "app-root",
   template: `
     <ul>
-      <li *ngFor="let person of (people$ | async)">{{ person.first_name }}</li>
+      <li *ngFor="let person of (people$ | async)">
+        {{ person.first_name }}
+      </li>
     </ul>
   `
 })
