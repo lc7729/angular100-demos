@@ -11,12 +11,12 @@ import { PeopleService } from "../shared/people.service";
 export class PersonDetailComponent implements OnInit {
   // id: number;
   constructor(private route: ActivatedRoute, private api: PeopleService) {
-    this.route.params
-      .pipe(
-        map(params => params["id"]),
-        tap(id => console.log("id", id))
-      )
-      .subscribe(id => api.getPerson(id));
+    // this.route.params
+    //   .pipe(
+    //     map(params => params["id"]),
+    //     tap(id => console.log("id", id))
+    //   )
+    //   .subscribe(id => api.getPerson(id));
   }
 
   ngOnInit() {}
