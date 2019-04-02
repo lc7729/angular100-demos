@@ -26,7 +26,7 @@ export class AppComponent implements OnInit {
     notSure.toFixed(); // okay, toFixed exists (but the compiler doesn't check)
 
     const prettySure: Object = 4;
-    prettySure.toFixed();
+    //  prettySure.toFixed();
     // Error: Property 'toFixed' doesn't exist on type 'Object'.
   }
 }
