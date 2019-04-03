@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "run-p json-server starting",
-    "starting": "ng serve --port 3333 -o",
+    "starting": "ng serve --port 5555 -o",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
