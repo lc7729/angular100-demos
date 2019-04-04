@@ -3,13 +3,13 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "run-p json-server startng",
-    "startng": "ng serve --port 3333 -o",
+    "start": "run-p json-server starting",
+    "startng": "ng serve --port 5555 -o",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "json-server": "json-server --watch people.json --port 4444"
+    "json-server": "json-server --watch people.json --port 5566"
   },
   "private": true,
   "dependencies": {
