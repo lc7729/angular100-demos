@@ -6,7 +6,7 @@ import { Product } from './shared/product';
   template: `
     <h1>Products</h1>
     <ul>
-      <li *ngFor="let product of products; let i = index">
+      <li *ngFor="let product of products; let i = index; trackBy: trackByFunction">
         {{ i + 1 }}) {{ product.description }} {{ product.quantity }}
       </li>
     </ul>
@@ -21,5 +21,9 @@ export class ProductListComponent implements OnInit {
       { id: 2, description: 'spoons', quantity: 10000 },
       { id: 3, description: 'knives', quantity: 0 }
     ];
+  }
+
+  trackByFunction(index: number, product: Product): number {
+    return product.id;
   }
 }
