@@ -1,21 +1,22 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
 
 @Component({
-  selector: 'app-root',
+  selector: "app-root",
   template: `
-          <h1>Welcome to {{title}} in {{theYear}}</h1>
-          <p>Next year is {{1 + theYear}}</p>
-
-          `,
-  styleUrls: ['./app.component.css']
+    <h1>Welcome to {{ title }} in {{ theYear }}</h1>
+    <p>Next year is {{ 1 + theYear }}</p>
+  `,
+  styleUrls: ["./app.component.css"]
 })
-export class AppComponent {
-  title: string = 'angular100-demos';
+export class AppComponent implements OnInit {
+  // literals dont need types
+  title = "angular100-demos";
   isTrue = true;
-  theYear: number = 2019;
 
-  constructor() {
-    //this.theYear = new Date().getFullYear();
+  // use types with variables initialized in ngOnInit
+  theYear: number;
+
+  ngOnInit(): void {
+    this.theYear = new Date().getFullYear();
   }
-
 }
