@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -6,7 +6,11 @@ import { Component } from '@angular/core';
          Check out my favicon...
           `
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
+  person: any;
 
+  ngOnInit(): void {
+    this.person = {name: 'Fred'};
+  }
 }
 
